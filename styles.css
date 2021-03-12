@@ -9,8 +9,7 @@
     grid-template-columns: 100px auto 150px 150px 50px;
     column-gap: 10px;
     padding: 10px;
-    margin: 0px 20px;
-    position: fixed;
+    position: relative;
     width: 100%;
     z-index: 11;
 }
@@ -35,18 +34,30 @@ nav button {
     font-Family: 'Open Sans', Sans-Serif;
     background-color: transparent;
     color: #ff7575;
+    cursor: pointer;
 }
 
+nav button:hover {
+    border-bottom: 2px solid #ff7575;
+}
 
-
+.fa-angle-double-down {
+    cursor: pointer;
+}
+.fa-angle-double-down:hover{
+    transform: translate(0px, 10px);
+    transition: transform 500ms ease-out;
+}
 
 main {
     background-image: url("laptop-5421966_1280.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    width:100vw;
     height: 100vh;
     position: relative;
+
 }
 
 main::after {
@@ -68,7 +79,7 @@ main > * {
 }
 
 main .container {
-    height: 75%;
+    height: 90%
 }
 
 .container {
@@ -78,7 +89,6 @@ main .container {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    padding: 10px;
 }
 
 .welcome {
@@ -90,11 +100,12 @@ main .container {
 
 .welcome i {
     color: #ff7575;
+    padding: 1rem;
 }
-
 
 .welcome h1 {
     font-size: 2.5rem;
+    
 }
 
 .welcome p {
@@ -118,13 +129,14 @@ section {
     background-attachment: fixed;
     background-size: cover;
     height: 100vh;
+    width: 100vw;
     position: relative;
 }
 
 section::after {
     content: "";
     display: block;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     background-color: rgb(2, 1, 17);
     position: absolute;
@@ -191,4 +203,12 @@ input, textarea {
 i {
     display: block;
     margin: 0px auto;
+}
+
+.contact {
+    width: 100vw;
+}
+
+.last-section {
+    height: 25vh;
 }
