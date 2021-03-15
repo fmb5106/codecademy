@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
 }
-
+/*------Navbar-------*/
 .grid-container {
     display: grid;
     grid-template-columns: 100px auto 150px 150px 50px;
@@ -41,14 +41,7 @@ nav button:hover {
     border-bottom: 2px solid #ff7575;
 }
 
-.fa-angle-double-down {
-    cursor: pointer;
-}
-.fa-angle-double-down:hover{
-    transform: translate(0px, 10px);
-    transition: transform 500ms ease-out;
-}
-
+/*-------Background-image--------*/
 main {
     background-image: url("laptop-5421966_1280.jpg");
     background-repeat: no-repeat;
@@ -77,9 +70,49 @@ main > * {
     z-index: 10;
     position: relative;
 }
+section {
+    background-image: url("laptop-5421966_1280.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
 
+section::after {
+    content: "";
+    display: block;
+    width: 100vw;
+    height: 100%;
+    background-color: rgb(2, 1, 17);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    z-index: 0;
+}
+section > * {
+    z-index: 9;
+    position: relative;
+}
+
+.last-section {
+    height: 25vh;
+}
+
+
+/*-----Main Page------*/
 main .container {
     height: 90%
+}
+
+.fa-angle-double-down {
+    cursor: pointer;
+}
+.fa-angle-double-down:hover{
+    transform: translate(0px, 10px);
+    transition: transform 500ms ease-out;
 }
 
 .container {
@@ -123,34 +156,7 @@ p{
     font-family: 'Work Sans', sans-serif;
 }
 
-section {
-    background-image: url("laptop-5421966_1280.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-}
-
-section::after {
-    content: "";
-    display: block;
-    width: 100vw;
-    height: 100%;
-    background-color: rgb(2, 1, 17);
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.5;
-    z-index: 0;
-}
-section > * {
-    z-index: 9;
-    position: relative;
-}
-
-
+/*--------Projects--------*/
 .projects-container {
     background-color: rgb(8, 27, 63);
     height: 70%;
@@ -179,13 +185,38 @@ section > * {
     margin: 20px 0px;
 }
 
+.project-panel > button {
+    text-decoration: underline;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    font-Family: 'Open Sans', Sans-Serif;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+/*--------Contact secion------------*/
+.contact {
+    width: 100vw;
+}
+
 .contact-panel {
     width: 40%;
     padding: 20px;
     margin: 20px;
-    height: 50vh;
+    max-height: 60vh;
     border-radius: 10px;
     background-color: #ff7575;
+    text-align: center;
+}
+
+.contact-info {
+    max-height: 60vh;
+}
+
+.social-icons  {
+    padding: 40px;
+    height: 50%;
 }
 
 input, textarea {
@@ -198,6 +229,10 @@ input, textarea {
 }
 .submit {
     width: 30%;
+    cursor: pointer;
+    border: 2px solid  black;
+    background-color:  transparent;
+    color: black;
 }
 
 i {
@@ -205,10 +240,54 @@ i {
     margin: 0px auto;
 }
 
-.contact {
-    width: 100vw;
-}
 
-.last-section {
-    height: 25vh;
+/*---------Media Queries---------*/
+
+@media only screen and (max-width: 800px) {
+    body {
+        background-color:  rgb(8, 27, 63);
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 10px;
+        padding: 10px;
+        position: relative;
+        width: 100%;
+        z-index: 11;
+    }
+    main, section {
+        all:initial;
+    }
+    main::after, section::after {
+        all: initial;
+    }
+    .welcome {
+        width: 90vw;
+        text-align: center;
+        color: white;
+        padding: 50px;
+    }
+    .welcome i {
+        display: block;
+        color: #ff7575;
+        padding: 1rem;
+    }
+    .welcome h1 {
+        font-size: 2rem;
+    }
+    .welcome p {
+        font-size: 1rem;
+        padding-bottom: 1rem;
+    }
+    .fa-angle-double-down {
+        visibility: hidden;
+    }
+    .project-panel {
+        margin: 20px;
+        width: 80%;
+    }
+    .contact-panel{
+        width: 80%;
+    }
 }
